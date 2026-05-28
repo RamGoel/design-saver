@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Vault</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-top">
+        <div class="logo">
+          <span class="logo-icon">◈</span>
+          Design Vault
+        </div>
+        <div class="header-actions">
+          <span class="count" id="count"></span>
+          <button class="icon-btn" id="fullView" title="Open full gallery">⊞</button>
+          <button class="icon-btn danger" id="clearAll" title="Clear all">⊘</button>
+        </div>
+      </div>
+      <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Search by author, tag, or text..."
+        autocomplete="off"
+      />
+      <div class="filter-bar" id="filterBar">
+        <button class="chip active" data-tag="all">All</button>
+      </div>
+    </header>
+
+    <main class="gallery" id="gallery"></main>
+
+    <div class="empty" id="empty" style="display:none">
+      <div class="empty-icon">◻</div>
+      <p class="empty-title">No designs saved yet</p>
+      <p class="empty-sub">Hover over any image on Twitter / X<br/>and click <strong>＋ Save</strong> to add it here.</p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

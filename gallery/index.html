@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design Vault — Moodboard</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="sidebar-logo-icon">◈</span>
+        Design Vault
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Filter</div>
+        <nav class="tag-nav" id="tagNav">
+          <button class="tag-item active" data-tag="all">
+            <span class="tag-dot" style="background:#6366f1"></span>
+            All
+            <span class="tag-count" id="countAll">0</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <button class="sidebar-action" id="exportBtn">↓ Export JSON</button>
+        <button class="sidebar-action danger" id="clearBtn">⊘ Clear all</button>
+      </div>
+    </aside>
+
+    <!-- ── Main area ── -->
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <input
+            type="text"
+            class="search"
+            id="search"
+            placeholder="Search designs, authors, tags…"
+            autocomplete="off"
+          />
+        </div>
+        <div class="topbar-right">
+          <span class="total-count" id="totalCount"></span>
+          <button class="add-btn" id="addBtn">＋ Add URL</button>
+        </div>
+      </header>
+
+      <!-- Add URL bar (hidden by default) -->
+      <div class="add-bar" id="addBar" style="display:none">
+        <input
+          type="url"
+          class="add-input"
+          id="addInput"
+          placeholder="Paste any URL — Dribbble, Behance, any design link…"
+          autocomplete="off"
+        />
+        <button class="add-confirm" id="addConfirm">Add</button>
+        <button class="add-cancel" id="addCancel">Cancel</button>
+      </div>
+
+      <!-- Gallery -->
+      <div class="masonry" id="masonry"></div>
+
+      <!-- Empty state -->
+      <div class="empty" id="empty" style="display:none">
+        <div class="empty-glyph">◻</div>
+        <p class="empty-title">Your moodboard is empty</p>
+        <p class="empty-sub">
+          Hover over any image on Twitter / X and click <strong>＋ Save</strong>,<br />
+          or paste a link above to add any design from the web.
+        </p>
+      </div>
+
+      <!-- No results -->
+      <div class="no-results" id="noResults" style="display:none">
+        <p>No designs match your search.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" style="display:none">
+    <button class="lightbox-close" id="lightboxClose">✕</button>
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+      <div class="lightbox-meta" id="lightboxMeta"></div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
